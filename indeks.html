@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetHub - Infrastruktur Jaringan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="treachery.mp3" type="audio/mpeg">
+    </audio>
+
+   <header>
+        <!-- Tombol Hamburger (Kiri) -->
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        
+        <!-- Logo di Tengah -->
+        <h2 class="logo">NetHub</h2>
+    </header>
+
+    <!-- SIDEBAR MENU (Tempat tombol musik yang baru & dijamin gampang dipencet) -->
+    <nav id="sidebarMenu" class="sidebar">
+        <!-- Tombol Close (X) -->
+        <span class="close-menu" onclick="toggleMenu()">&times;</span>
+        
+        <button class="tab-btn active" onclick="openTab('ensiklopedia')">Ensiklopedia</button>
+        <button class="tab-btn" onclick="openTab('video')">Video</button>
+        <button class="tab-btn" onclick="openTab('jasa')">Jasa</button>
+        <button class="tab-btn" onclick="openTab('produk')">Produk</button>
+        <button class="tab-btn" onclick="openTab('game')">Game Proyek</button>
+        
+        <!-- Tombol Musik dipindah ke sini -->
+        <button id="musicToggle" class="tab-btn" onclick="toggleMusic()" style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">🎵 Music: OFF</button>
+    </nav>
+        
+    <main>
+        <!-- TAB 1: Ensiklopedia -->
+        <section id="ensiklopedia" class="tab-content active">
+            <h2>Ensiklopedia Hardware (Klik Kartu di Bawah)</h2>
+            <div class="card-grid">
+                <div class="card" onclick="bukaPopup(this)">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxSua3J6BaIBrq_UpOkiuRziRNHtG4rmK8pDTGCYiQ0g&s=10" alt="Router" class="card-img">
+                    <h3>Router Cisco</h3>
+                    <p>Perangkat penghubung jaringan yang mengatur rute paket data ke tujuan akhir.</p>
+                </div>
+                <div class="card" onclick="bukaPopup(this)">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT55E7OoEL4n6rIxTNHXA3VHFBTsFYA0aULDGtjieD0Zw&s=10" alt="Switch" class="card-img">
+                    <h3>Switch Jaringan</h3>
+                    <p>Beroperasi di Layer 2, meneruskan data antar perangkat dalam satu jaringan lokal.</p>
+                </div>
+                <div class="card" onclick="bukaPopup(this)">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTstlYkiJn6IgOQj86fISpFSi2BMCq4ECX--eG-U6FOtVkgWAJ_MMPlZ1Q&s=103" alt="Kabel UTP" class="card-img">
+                    <h3>Kabel UTP (TIA/EIA-568)</h3>
+                    <p>Standar pengkabelan jaringan. Menggunakan urutan pin Straight-through atau Crossover pada konektor RJ-45.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: Video -->
+        <!-- TAB 2: Video Konfigurasi Perangkat -->
+        <section id="video" class="tab-content">
+            <h2>Video Instalasi & Konfigurasi Perangkat</h2>
+            
+            <div class="card-grid">
+                <!-- Video 1: Router Cisco -->
+                <div class="card" style="cursor: default;">
+                    <h3>Konfigurasi Dasar Router Cisco</h3>
+                    <div class="video-container" style="margin-top: 0.5rem;">
+                        <iframe width="100%" height="220" src="https://youtu.com/embed/Rog_OCreFig?si=bjhNwqqXYFFkbJBA" title="Router Cisco" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- Video 2: Switch -->
+                <div class="card" style="cursor: default;">
+                    <h3>Konfigurasi VLAN pada Switch</h3>
+                    <div class="video-container" style="margin-top: 0.5rem;">
+                        <iframe width="100%" height="220" src="https://youtu.be/jXtG_lcR9P4?si=iYEBmsoXvu-hsHBF" title="Switch VLAN" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- Video 3: Access Point / Perangkat Lain -->
+                <div class="card" style="cursor: default;">
+                    <h3>Setup Access Point Wi-Fi</h3>
+                    <div class="video-container" style="margin-top: 0.5rem;">
+                        <iframe width="100%" height="220" src="https://www.youtube.com/embed/LINK_YOUTUBE_3" title="Access Point" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: Jasa -->
+        <section id="jasa" class="tab-content">
+            <h2>Layanan & Jasa Profesional</h2>
+            <p style="margin-bottom: 1.5rem;">Kami menyediakan solusi infrastruktur jaringan dan IT untuk kebutuhan rumah, sekolah, atau kantor Anda.</p>
+            
+            <div class="card-grid">
+                
+                <!-- Layanan 1 -->
+                <div class="card" style="cursor: default;">
+                    <h3>🛠️ Setup & Konfigurasi Jaringan</h3>
+                    <p style="margin-bottom: 1rem;">Perancangan topologi jaringan, konfigurasi Router (Cisco/MikroTik), Switch, dan manajemen kabel UTP sesuai standar TIA/EIA.</p>
+                    <p style="color: var(--emerald-green); font-weight: bold; margin-bottom: 1rem;">Mulai dari Rp 250.000</p>
+                    <a href="https://wa.me/6287885730001?text=Halo,%20saya%20tertarik%20dengan%20jasa%20Setup%20dan%20Konfigurasi%20Jaringan%20Anda." target="_blank" class="action-btn">Konsultasi via WhatsApp</a>
+                </div>
+
+                <!-- Layanan 2 -->
+                <div class="card" style="cursor: default;">
+                    <h3>💻 Perancangan Simulasi & Tugas (Cisco Packet Tracer)</h3>
+                    <p style="margin-bottom: 1rem;">Membantu pembuatan topologi jaringan, troubleshooting error, dan dokumentasi proyek untuk tugas sekolah atau kuliah.</p>
+                    <p style="color: var(--emerald-green); font-weight: bold; margin-bottom: 1rem;">Mulai dari Rp 50.000</p>
+                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20konsultasi%20tugas%20Cisco%20Packet%20Tracer." target="_blank" class="action-btn">Konsultasi via WhatsApp</a>
+                </div>
+
+                <!-- Layanan 3 -->
+                <div class="card" style="cursor: default;">
+                    <h3>🌐 Maintenance & Troubleshooting</h3>
+                    <p style="margin-bottom: 1rem;">Pemeriksaan berkala jaringan internet lambat, perbaikan koneksi LAN yang putus, dan optimalisasi kecepatan Wi-Fi.</p>
+                    <p style="color: var(--emerald-green); font-weight: bold; margin-bottom: 1rem;">Menyesuaikan Kebutuhan</p>
+                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20butuh%20bantuan%20troubleshooting%20jaringan." target="_blank" class="action-btn">Hubungi Kami</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TAB 4: Produk -->
+        <!-- TAB 4: Produk -->
+        <section id="produk" class="tab-content">
+            <h2>Rekomendasi Hardware Jaringan</h2>
+            <div class="card-grid">
+                
+                <!-- Produk 1 -->
+                <div class="card" style="cursor: default;">
+                    <!-- Gambar Produk -->
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=500&q=80" alt="Kabel LAN" class="card-img">
+                    <h3>Kabel LAN Cat6 30 Meter</h3>
+                    <p style="color: var(--emerald-green); font-weight: bold; margin-bottom: 0.5rem;">Harga: Rp 150.000</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">Kabel UTP berkualitas tinggi untuk jaringan internet stabil di rumah atau kantor.</p>
+                    
+                    <!-- Tombol Link Affiliate Shopee / Tokopedia -->
+                    <!-- Ganti tanda pagar (#) dengan link affiliate milikmu -->
+                    <a href="https://share.google/8nKkh05WLqq5JoLsk" target="_blank" class="action-btn">Beli di Shopee</a>
+                </div>
+
+                <!-- Produk 2 (Bisa kamu duplikat ke samping jika ingin menambah produk lain) -->
+                <div class="card" style="cursor: default;">
+                    <img src="https://images.unsplash.com/photo-1544652478-6653e09f18a2?auto=format&fit=crop&w=500&q=80" alt="Switch Hub" class="card-img">
+                    <h3>TP-Link Switch 8 Port Gigabit</h3>
+                    <p style="color: var(--emerald-green); font-weight: bold; margin-bottom: 0.5rem;">Harga: Rp 220.000</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">Switch ethernet berkecepatan tinggi untuk memperbanyak koneksi LAN.</p>
+                    
+                    <a href="https://shopee.co.id/link-affiliate-produk-kedua" target="_blank" class="action-btn">Beli di Shopee</a>
+                </div>
+
+            </div>
+        </section>
+
+      <!-- TAB 5: Game Interaktif Jaringan -->
+        <section id="game" class="tab-content">
+            <h2>NetMaster Time Attack ⏱️</h2>
+            <p style="margin-bottom: 1.5rem; text-align: center;">Jawab pertanyaan infrastruktur jaringan sebanyak mungkin dalam 30 detik! Buktikan kamu ahlinya.</p>
+            
+            <div class="game-wrapper">
+                <!-- Menu Utama Game & Leaderboard -->
+                <div id="game-menu" class="card text-center" style="cursor: default;">
+                    <h3>Siap Mencetak Rekor?</h3>
+                    <p style="margin-bottom: 1rem;">Pastikan kamu paham Cisco, Mikrotik, dan standar UTP!</p>
+                    <button class="action-btn" onclick="startGame()" style="font-size: 1.2rem; padding: 0.8rem 2rem;">Let's start</button>
+                    
+                    <div class="leaderboard">
+                        <h4 style="margin-top: 2rem; border-bottom: 1px solid var(--emerald-light); padding-bottom: 0.5rem;">🏆 Papan Skor Global (Update Mingguan)</h4>
+                        <table id="score-table">
+                            <thead>
+                                <tr>
+                                    <th>Peringkat</th>
+                                    <th>Nama Pemain</th>
+                                    <th>Skor</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leaderboard-body">
+                                <!-- Data skor akan diisi oleh JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Area Bermain (Tersembunyi di awal) -->
+                <div id="game-play" class="card text-center" style="display: none; cursor: default;">
+                    <div class="timer-bar-container">
+                        <div id="timer-bar"></div>
+                    </div>
+                    <h2 id="time-text" style="color: red; font-size: 2rem; margin: 1rem 0;">30s</h2>
+                    
+                    <h3 id="question-text" style="margin-bottom: 1.5rem; font-size: 1.3rem;">Pertanyaan akan muncul di sini</h3>
+                    
+                    <div id="options-container" class="options-grid">
+                        <button class="option-btn" onclick="checkAnswer(0)">Opsi A</button>
+                        <button class="option-btn" onclick="checkAnswer(1)">Opsi B</button>
+                        <button class="option-btn" onclick="checkAnswer(2)">Opsi C</button>
+                        <button class="option-btn" onclick="checkAnswer(3)">Opsi D</button>
+                    </div>
+                </div>
+
+                <!-- Hasil Akhir (Tersembunyi di awal) -->
+                <div id="game-over" class="card text-center" style="display: none; cursor: default;">
+                    <h2>Waktu Habis! ⏰</h2>
+                    <p>Skor Akhir Kamu:</p>
+                    <h1 id="final-score" style="color: var(--emerald-green); font-size: 3rem; margin: 1rem 0;">0</h1>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <input type="text" id="playerName" placeholder="Masukkan Nama Kamu..." style="padding: 10px; width: 80%; max-width: 300px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 10px;">
+                        <br>
+                        <button class="action-btn" onclick="saveScore()">Simpan Skor ke Papan</button>
+                    </div>
+                    <button class="action-btn" onclick="resetGameMenu()" style="background-color: #555;">Kembali ke Menu</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- KOTAK POP-UP ENSIKLOPEDIA -->
+        <div id="kotakPopup" class="modal-overlay" onclick="tutupPopup()">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span class="close-btn" onclick="tutupPopup()">&times;</span>
+                <img id="gambarPopup" src="" alt="Gambar Detail">
+                <h3 id="judulPopup">Judul</h3>
+                <p id="teksPopup">Deskripsi</p>
+            </div>
+        </div>
+
+    </main>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
